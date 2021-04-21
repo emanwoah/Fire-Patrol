@@ -1,5 +1,5 @@
-//Spaceship prefab
-class Spaceship extends Phaser.GameObjects.Sprite {
+//Hydras prefab
+class Hydra extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture, frame, pointValue) {
         super (scene, x, y, texture, frame);
         //add to scene
@@ -13,7 +13,7 @@ class Spaceship extends Phaser.GameObjects.Sprite {
     }
 
     update() {
-        // move spaceship to the left
+        // move hydra symbol to the left
         this.x -= this.moveSpeed;
 
         //wrap around from left edge to right edge

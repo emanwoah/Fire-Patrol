@@ -4,7 +4,7 @@ class Play extends Phaser.Scene{
     }
     preload() {
         //adds sprites
-        this.load.image('test', './assets/test.png');
+        this.load.image('city', './assets/city.png');
         this.load.image('cloud', './assets/cloud.png');
         this.load.image('hydra', './assets/hydra64.png');
         this.load.image('shield', './assets/shield.png');
@@ -15,7 +15,7 @@ class Play extends Phaser.Scene{
 
     create() {
         this.cloud = this.add.tileSprite(0,0,640,480, 'cloud',).setOrigin(0,0);
-        this.starfield = this.add.tileSprite(0,0,640,480, 'test',).setOrigin(0,0);
+        this.starfield = this.add.tileSprite(0,0,640,480, 'city',).setOrigin(0,0);
         // Green UI
         this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0x1F).setOrigin(0, 0);
         // White Borders
@@ -30,9 +30,9 @@ class Play extends Phaser.Scene{
 
 
         // adds 3 spaceships
-        this.ship01 = new Spaceship(this, game.config.width + borderUISize*6, borderUISize*4, 'hydra', 0, 30).setOrigin(0, 0);
-        this.ship02 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2, 'hydra', 0, 20).setOrigin(0,0);
-        this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4, 'hydra', 0, 10).setOrigin(0,0);
+        this.ship01 = new Hydra(this, game.config.width + borderUISize*6, borderUISize*4, 'hydra', 0, 30).setOrigin(0, 0);
+        this.ship02 = new Hydra(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2, 'hydra', 0, 20).setOrigin(0,0);
+        this.ship03 = new Hydra(this, game.config.width, borderUISize*6 + borderPadding*4, 'hydra', 0, 10).setOrigin(0,0);
         
 
         // define controls & keys
@@ -98,7 +98,6 @@ class Play extends Phaser.Scene{
         if(!this.gameOver) {
             // moves player / shoot
             this.p1Rocket.update();
-
             this.p1Shield.update();
             
 
