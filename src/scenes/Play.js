@@ -6,7 +6,7 @@ class Play extends Phaser.Scene{
         //adds sprites
         this.load.image('starfield', './assets/starfield.png');
         this.load.image('spaceship', './assets/spaceship.png');
-        this.load.image('rocket', './assets/rocket.png');
+        this.load.image('shield', './assets/shield.png');
         // loads sprite
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
     }
@@ -22,7 +22,7 @@ class Play extends Phaser.Scene{
         this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0, 0);
 
         // intialize rocket
-        this.p1Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'rocket').setOrigin(0.5, 0);
+        this.p1Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'shield').setOrigin(0.5, 0);
 
         // adds 3 spaceships
         this.ship01 = new Spaceship(this, game.config.width + borderUISize*6, borderUISize*4, 'spaceship', 0, 30).setOrigin(0, 0);

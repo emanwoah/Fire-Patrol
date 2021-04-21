@@ -27,7 +27,7 @@ class Menu extends Phaser.Scene{
 
         //show menu text
         this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 
-            'FIRE PATROL', menuConfig).setOrigin(0.5);
+            'CAPTAIN AMERICA', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width/2, game.config.height/2, 
             'Use <--> arrow to Move and (F) to fire', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
