@@ -27,7 +27,7 @@ class Menu extends Phaser.Scene{
 
         //show menu text
         this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 
-            'CAPTAIN AMERICA & THE US AGENT', menuConfig).setOrigin(0.5);
+            'Shield Toss ft. Captain America & US Agent', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width/2, game.config.height/2, 
             'Use (<- ->) to move Red Shield, (F) to throw. Use (J, L) to move Black Shield, (H) to throw.', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
