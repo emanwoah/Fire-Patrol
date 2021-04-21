@@ -5,7 +5,7 @@ class Shield extends Phaser.GameObjects.Sprite {
       scene.add.existing(this); // add to existing scene
       this.isFiring = false; // track shield
       this.moveSpeed = 1.75; // movement speed
-      this.sfxShield = scene.sound.add('sfx_rocket'); // add sound effect
+      this.sfxShield = scene.sound.add('sfx_shield'); // add sound effect
     }
   
     update() {

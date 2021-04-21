@@ -5,16 +5,16 @@ class Menu extends Phaser.Scene{
 
     preload() {
         // load audio
-        this.load.audio('sfx_select', './assets/blip_select12.wav');
-        this.load.audio('sfx_explosion', './assets/explosion38.wav');
-        this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
+        this.load.audio('sfx_select', './assets/ding.wav');
+        this.load.audio('sfx_explosion', './assets/dink.wav');
+        this.load.audio('sfx_shield', './assets/newthor.wav');
       }
 
     create() {
         // menu configuration
         let menuConfig = {
             fontFamily: 'Arial',
-            frontSize: '28px',
+            frontSize: '24px',
             backgroundColor: '#f3b141',
             color: '#843605',
             align: 'right',
@@ -27,9 +27,9 @@ class Menu extends Phaser.Scene{
 
         //show menu text
         this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 
-            'CAPTAIN AMERICA', menuConfig).setOrigin(0.5);
+            'CAPTAIN AMERICA & THE US AGENT', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width/2, game.config.height/2, 
-            'Use <--> arrow to Move and (F) to fire', menuConfig).setOrigin(0.5);
+            'Use (<- ->) to move Red Shield, (F) to throw. Use (J, L) to move Black Shield, (H) to throw.', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
         menuConfig.color = '#000';
         this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 

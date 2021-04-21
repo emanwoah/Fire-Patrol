@@ -15,21 +15,21 @@ class Play extends Phaser.Scene{
 
     create() {
         this.cloud = this.add.tileSprite(0,0,640,480, 'cloud',).setOrigin(0,0);
-        this.starfield = this.add.tileSprite(0,0,640,480, 'city',).setOrigin(0,0);
-        // Green UI
+        this.city = this.add.tileSprite(0,0,640,480, 'city',).setOrigin(0,0);
+        // Blue UI
         this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0x1F).setOrigin(0, 0);
-        // White Borders
-        this.add.rectangle(0, 0, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(0, game.config.height - borderUISize, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(0, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0, 0);
-        this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0, 0);
+        // Black Borders
+        this.add.rectangle(0, 0, game.config.width, borderUISize, 0x000000).setOrigin(0, 0);
+        this.add.rectangle(0, game.config.height - borderUISize, game.config.width, borderUISize, 0x000000).setOrigin(0, 0);
+        this.add.rectangle(0, 0, borderUISize, game.config.height, 0x000000).setOrigin(0, 0);
+        this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0x000000).setOrigin(0, 0);
 
-        // intialize rocket
+        // intialize shields
         this.p1Cap = new Cap(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'shield').setOrigin(0.5, 0);
         this.p1Stealth = new Shield(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'stealth').setOrigin(1.5, 0);
 
 
-        // adds 3 spaceships
+        // adds 3 hydra logos
         this.ship01 = new Hydra(this, game.config.width + borderUISize*6, borderUISize*4, 'hydra', 0, 30).setOrigin(0, 0);
         this.ship02 = new Hydra(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2, 'hydra', 0, 20).setOrigin(0,0);
         this.ship03 = new Hydra(this, game.config.width, borderUISize*6 + borderPadding*4, 'hydra', 0, 10).setOrigin(0,0);
@@ -57,9 +57,9 @@ class Play extends Phaser.Scene{
         let scoreConfig = {
             fontFamily: 'Arial',
             fontSize: '28px',
-            backgroundColor: '#F3B141',
-            color: '#843605',
-            align: 'right',
+            backgroundColor: '#FFFFFF',
+            color: '#000000',
+            align: 'center',
             padding: {
             top: 5,
             bottom: 5,
@@ -88,9 +88,9 @@ class Play extends Phaser.Scene{
     }
 
     update() {
-        // move starfield
-        this.starfield.tilePositionX -= 4;
-        this.cloud.tilePositionX -= 2;
+        // move environments
+        this.city.tilePositionX -= 2;
+        this.cloud.tilePositionX -= 4;
           // restarts game
             if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyR)) {
                 this.scene.restart();
