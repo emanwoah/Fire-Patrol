@@ -1,11 +1,11 @@
-// Rocket prefab
-class Rocket extends Phaser.GameObjects.Sprite {
+// OG Captain America Shield
+class Cap extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture, frame) {
       super(scene, x, y, texture, frame);
       scene.add.existing(this); // add to existing scene
       this.isFiring = false; // track rocket
       this.moveSpeed = 1.75; // movement speed
-      this.sfxRocket = scene.sound.add('sfx_rocket'); // add sound effect
+      this.sfxCap = scene.sound.add('sfx_rocket'); // add sound effect
     }
   
     update() {
@@ -20,7 +20,7 @@ class Rocket extends Phaser.GameObjects.Sprite {
         }
         if(Phaser.Input.Keyboard.JustDown(keyF) && !this.isFiring) {
             this.isFiring = true;
-            this.sfxRocket.play();
+            this.sfxCap.play();
         }
         //fired, move up
         if(this.isFiring && this.y >= borderUISize * 3 + borderPadding) {

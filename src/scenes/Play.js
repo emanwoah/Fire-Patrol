@@ -25,8 +25,8 @@ class Play extends Phaser.Scene{
         this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0, 0);
 
         // intialize rocket
-        this.p1Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'shield').setOrigin(0.5, 0);
-        this.p1Shield = new Shield(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'stealth').setOrigin(1.5, 0);
+        this.p1Cap = new Cap(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'shield').setOrigin(0.5, 0);
+        this.p1Stealth = new Shield(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'stealth').setOrigin(1.5, 0);
 
 
         // adds 3 spaceships
@@ -97,8 +97,8 @@ class Play extends Phaser.Scene{
             }
         if(!this.gameOver) {
             // moves player / shoot
-            this.p1Rocket.update();
-            this.p1Shield.update();
+            this.p1Cap.update();
+            this.p1Stealth.update();
             
 
             // update the 3 spaceships
@@ -107,30 +107,30 @@ class Play extends Phaser.Scene{
             this.ship03.update();
         }
         // check collisions
-        if(this.checkCollision(this.p1Rocket, this.ship03)) {
+        if(this.checkCollision(this.p1Cap, this.ship03)) {
             this.shipExplode(this.ship03);
-            this.p1Rocket.reset();
+            this.p1Cap.reset();
         }
-        if (this.checkCollision(this.p1Rocket, this.ship02)) {
+        if (this.checkCollision(this.p1Cap, this.ship02)) {
             this.shipExplode(this.ship02);
-            this.p1Rocket.reset();
+            this.p1Cap.reset();
         }
-        if (this.checkCollision(this.p1Rocket, this.ship01)) {
+        if (this.checkCollision(this.p1Cap, this.ship01)) {
             this.shipExplode(this.ship01);
-            this.p1Rocket.reset();
+            this.p1Cap.reset();
         }
 
-        if(this.checkCollision(this.p1Shield, this.ship03)) {
+        if(this.checkCollision(this.p1Stealth, this.ship03)) {
             this.shipExplode(this.ship03);
-            this.p1Shield.reset();
+            this.p1Stealth.reset();
         }
-        if (this.checkCollision(this.p1Shield, this.ship02)) {
+        if (this.checkCollision(this.p1Stealth, this.ship02)) {
             this.shipExplode(this.ship02);
-            this.p1Shield.reset();
+            this.p1Stealth.reset();
         }
-        if (this.checkCollision(this.p1Shield, this.ship01)) {
+        if (this.checkCollision(this.p1Stealth, this.ship01)) {
             this.shipExplode(this.ship01);
-            this.p1Shield.reset();
+            this.p1Stealth.reset();
         }
         
 
